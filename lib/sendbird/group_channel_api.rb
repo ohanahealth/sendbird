@@ -43,6 +43,14 @@ module Sendbird
       def leave(channel_url, body)
         put(path: build_url(channel_url, 'leave'), body: body)
       end
+
+      def register_operators(channel_url, body)
+        post(path: build_url(channel_url, 'operators'), body: body)
+      end
+
+      def unregister_operators(channel_url, body)
+        delete(path: build_url(channel_url, 'operators'), body: body)
+      end
     end
   end
 end
